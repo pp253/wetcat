@@ -48,7 +48,7 @@ export default {
   },
   methods:{
     update() {
-      api.device.getData('wzaHMXe3G0NweRFW')
+      api.device.getData('DTQj4ROiclK7aT4K')
       .then(data => {
         let latest = data[0]
         this.temperature = latest.data.temperature
