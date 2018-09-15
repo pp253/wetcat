@@ -11,6 +11,8 @@ import compression from 'compression'
 import cors from 'cors'
 import morgan from 'morgan'
 import { IS_PRODUCTION } from '@/lib/utils'
+import routes from '@/routes'
+import '@/models'
 
 export const app = express()
 
@@ -42,9 +44,12 @@ app.use(
   })
 )
 
+// Debugging
 app.use(morgan('dev'))
 
+// Routes
 app.use('/', express.static('public'))
+app.use('/', routes)
 
 // development error handler
 // will print stacktrace
@@ -75,6 +80,7 @@ app.use(function (err, req, res, next) {
   })
 })
 
+console.log(`Running in ${IS_PRODUCTION ? 'production' : 'development'} mode.`)
 var server = app.listen(process.env.PORT || 3000, function () {
   console.log('Listening on port ' + server.address().port)
 })

@@ -1,42 +1,19 @@
 {
-  "name": "wetcat",
-  "version": "0.0.1",
-  "description": "The website to track my room's humidity.",
-  "main": "app.js",
+  "name": "wetcat-view",
+  "version": "1.0.0",
+  "description": "A Vue.js project",
+  "author": "pp253 <pp.pp253@gmail.com>",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "babel-node": "babel-node ./app.js",
-    "dev": "nodemon --exec npm run babel-node -- ./app.js",
-    "webpack-dev-server": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run babel-node",
-    "build": "node view/build/build.js"
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "start": "npm run dev",
+    "build": "node build/build.js"
   },
-  "author": "pp253",
-  "license": "Apache-2.0",
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-env": "^2.4.1",
-    "babel-plugin-root-import": "^6.1.0",
-    "body-parser": "^1.18.3",
-    "compression": "^1.7.3",
-    "cors": "^2.8.4",
-    "express": "^4.16.3",
-    "express-jwt": "^5.3.1",
-    "express-session": "^1.15.6",
-    "express-validator": "^5.3.0",
-    "helmet": "^3.13.0",
-    "morgan": "^1.9.1",
-    "nedb": "^1.8.0"
+    "vue": "^2.5.2",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
-    "axios": "^0.18.0",
-    "cross-env": "^5.2.0",
-    "cross-spawn": "^5.0.1",
-    "inject-loader": "^3.0.0",
-    "node-sass": "^4.9.2",
-    "nodemon": "^1.18.4",
-    "sass-loader": "^6.0.7",
-    "vue": "^2.5.17",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.22.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
@@ -68,6 +45,7 @@
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
+    "vuetify": "^1.2.3",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
@@ -81,26 +59,5 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ],
-  "babel": {
-    "presets": [
-      "env"
-    ],
-    "plugins": [
-      [
-        "babel-plugin-root-import",
-        {
-          "rootPathSuffix": "",
-          "rootPathPrefix": "@"
-        }
-      ]
-    ]
-  },
-  "nodemonConfig": {
-    "ignore": [
-      "db/*",
-      "view/*"
-    ],
-    "delay": "1000"
-  }
+  ]
 }
