@@ -1,5 +1,5 @@
 import Datastore from 'nedb'
-import config from '@/config'
+import config from '../config'
 
 const db = {
   data: new Datastore({

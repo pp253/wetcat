@@ -10,9 +10,9 @@ import expressValidator from 'express-validator'
 import compression from 'compression'
 import cors from 'cors'
 import morgan from 'morgan'
-import { IS_PRODUCTION } from '@/lib/utils'
-import routes from '@/routes'
-import '@/models'
+import { IS_PRODUCTION } from './lib/utils'
+import routes from './routes'
+import './models'
 
 export const app = express()
 

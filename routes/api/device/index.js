@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { Device } from '@/models'
+import { Device } from '../../../models'
 const router = Router()
 
 router.get('/list', function (req, res, next) {
