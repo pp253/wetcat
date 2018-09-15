@@ -14,6 +14,8 @@ import { IS_PRODUCTION } from './lib/utils'
 import routes from './routes'
 import './models'
 
+console.log(`Running in ${IS_PRODUCTION ? 'production' : 'development'} environment.`)
+
 export const app = express()
 
 // Security
@@ -80,7 +82,27 @@ app.use(function (err, req, res, next) {
   })
 })
 
-console.log(`Running in ${IS_PRODUCTION ? 'production' : 'development'} mode.`)
-var server = app.listen(process.env.PORT || 80, function () {
-  console.log('Listening on port ' + server.address().port)
-})
+if (IS_PRODUCTION) {
+  let httpsServer = https.createServer({
+    key: fs.readFileSync(path.join(__dirname, './secret/private.key')),
+    cert: fs.readFileSync(path.join(__dirname, './secret/certificate.crt')),
+    ca: fs.readFileSync(path.join(__dirname, './secret/ca_bundle.crt'))
+  }, app)
+
+  // Listening
+  httpsServer.listen(443, () => {
+    console.log('Start listening on PORT %d ...', 443)
+  })
+
+  // Auto redirect from port 80 to 443
+  http.createServer((req, res) => {
+    res.writeHead(301, {
+      Location: 'https://' + req.headers['host'] + req.url
+    })
+    res.end()
+  }).listen(80)
+} else {
+  let httpServer = app.listen(process.env.PORT || 80, function () {
+    console.log('Listening on port ' + httpServer.address().port)
+  })
+}

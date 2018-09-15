@@ -1,6 +1,7 @@
 sudo apt-get update
 
 sudo apt-get install -y nmap
+sudo apt-get install -y dnsutils
 sudo apt-get install -y git
 
 sudo apt-get install -y dirmngr --install-recommends
