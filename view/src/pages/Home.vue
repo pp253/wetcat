@@ -36,14 +36,10 @@ export default {
   name: 'Home',
   data () {
     return {
-      temperature: null,
-      humidity: null,
-      lastUpdate: null
-    }
-  },
-  computed: {
-    lastUpdateFromNow() {
-      return dayjs(this.lastUpdate).fromNow()
+      temperature: 0,
+      humidity: 0,
+      lastUpdate: null,
+      lastUpdateFromNow: '尚未更新'
     }
   },
   methods:{
@@ -54,9 +50,11 @@ export default {
         this.temperature = latest.data.temperature
         this.humidity = latest.data.humidity
         this.lastUpdate = latest.timestamp
+        this.lastUpdateFromNow = dayjs(this.lastUpdate).fromNow()
       })
       .catch(err => {
         console.log(err)
+        this.lastUpdateFromNow = '更新失敗'
       })
     }
   },
