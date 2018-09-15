@@ -1,2 +1,0 @@
-webpackJsonp([4],{"1KLM":function(e,t){},ujtr:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});n("gyMJ");var r={render:function(){var e=this.$createElement,t=this._self._c||e;return t("v-container",[t("router-view")],1)},staticRenderFns:[]};var u=n("VU/8")({name:"Devices",data:function(){return{}},methods:{},mounted:function(){}},r,!1,function(e){n("1KLM")},"data-v-31d45541",null);t.default=u.exports}});
-//# sourceMappingURL=4.7b34b525397d214323c3.js.map
