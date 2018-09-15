@@ -1,0 +1,46 @@
+{
+  "name": "wetcat",
+  "version": "0.0.1",
+  "description": "The website to track my room's humidity.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-node": "babel-node ./app.js",
+    "dev": "nodemon --exec npm run babel-node -- ./app.js",
+    "start": "npm run babel-node"
+  },
+  "author": "pp253",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-env": "^2.4.1",
+    "babel-plugin-root-import": "^6.1.0",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-jwt": "^5.3.1",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.0",
+    "helmet": "^3.13.0",
+    "morgan": "^1.9.1",
+    "nedb": "^1.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      [
+        "babel-plugin-root-import",
+        {
+          "rootPathSuffix": "",
+          "rootPathPrefix": "@"
+        }
+      ]
+    ]
+  }
+}
