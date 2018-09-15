@@ -2,6 +2,17 @@ import { Router } from 'express'
 import { Device } from '@/models'
 const router = Router()
 
+router.get('/list', function (req, res, next) {
+  Device.list()
+    .exec((err, data) => {
+      if (err) {
+        next(err)
+        return
+      }
+      res.json(data)
+    })
+})
+
 router.post('/create', function (req, res, next) {
   let deviceConfig = req.body.deviceConfig
   Device.create(deviceConfig)

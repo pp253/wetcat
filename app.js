@@ -81,6 +81,6 @@ app.use(function (err, req, res, next) {
 })
 
 console.log(`Running in ${IS_PRODUCTION ? 'production' : 'development'} mode.`)
-var server = app.listen(process.env.PORT || 3000, function () {
+var server = app.listen(process.env.PORT || 80, function () {
   console.log('Listening on port ' + server.address().port)
 })

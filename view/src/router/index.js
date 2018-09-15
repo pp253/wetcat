@@ -12,9 +12,13 @@ export default new Router({
     },
     {
       path: '/device',
-      name: 'Device',
       component: () => import('../pages/Devices'),
       children: [
+        {
+          path: '',
+          name: 'Devices',
+          component: () => import('../components/DeviceListPanel')
+        },
         {
           path: 'create',
           component: () => import('../components/DeviceCreatePanel')

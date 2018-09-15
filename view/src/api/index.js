@@ -4,4 +4,4 @@ export default {
   device
 }
 
-export const API_BASE_DOMAIN = 'http://localhost:3000'
+export const API_BASE_DOMAIN = 'http://localhost'

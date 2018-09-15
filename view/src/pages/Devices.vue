@@ -7,7 +7,7 @@
 <script>
 import api from '../api'
 export default {
-  name: 'Device',
+  name: 'Devices',
   data () {
     return {
     }

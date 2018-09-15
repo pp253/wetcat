@@ -2,9 +2,20 @@ import axios from 'axios'
 import {API_BASE_DOMAIN} from '.'
 
 const PATH = {
+  LIST: '/api/device/list',
   CREATE: '/api/device/create',
   GET_DATA: '/api/device/getData',
   INSERT_DATA: '/api/device/insertData'
+}
+
+export function list () {
+  return new Promise((resolve, reject) => {
+    axios.get(API_BASE_DOMAIN + PATH.LIST)
+    .then(data => {
+      resolve(data.data)
+    })
+    .catch(err => { reject(err) })
+  })
 }
 
 export function create (deviceConfig) {

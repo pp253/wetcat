@@ -58,25 +58,28 @@ export class Device {
     })
   }
 
-  // static
-  create (device) {
+  static list (query) {
+    return db.devices.find(query || {})
+  }
+
+  static create (deviceConfig) {
     return new Promise((resolve, reject) => {
       db.devices.insert({
         type: 'device',
-        name: device.name,
+        name: deviceConfig.name,
 
         /**
          * @type boolean
          * Whether the device is fixed at a place or not.
          */
-        fixed: device.fixed,
+        fixed: deviceConfig.fixed,
 
         /**
          * @type string
          * If `fixed` is false, the `location` property is optional.
          */
-        location: device.location,
-        hardwareInfo: device.hardwareInfo
+        location: deviceConfig.location,
+        hardwareInfo: deviceConfig.hardwareInfo
       }, (err, device) => {
         if (err) {
           reject(err)

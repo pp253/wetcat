@@ -22,7 +22,8 @@
             </v-form>
           </v-card-text>
           <v-card-actions>
-            <v-btn type="submit">登錄新裝置</v-btn>
+            <v-btn :disabled="!valid"
+                   @click="submit">新增資料</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -31,6 +32,7 @@
 </template>
 
 <script>
+import api from '../api'
 export default {
   name: 'DeviceCreatePanel',
   data () {
@@ -44,12 +46,14 @@ export default {
     }
   },
   methods:{
-    update() {
-
+    submit() {
+      api.device.create({
+        name: this.name,
+        fixed: this.fixed,
+        location: this.location,
+        hardwareInfo: this.hardwareInfo
+      })
     }
-  },
-  mounted() {
-
   }
 }
 </script>
