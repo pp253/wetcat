@@ -1,4 +1,4 @@
-# wetcat-view
+# wettycat-view
 
 > A Vue.js project
 

@@ -1,5 +1,5 @@
 {
-  "name": "wetcat",
+  "name": "wettycat",
   "version": "0.0.1",
   "description": "The website to track my room's humidity.",
   "main": "app.js",
