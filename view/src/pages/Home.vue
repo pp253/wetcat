@@ -17,6 +17,11 @@
         </v-layout>
       </v-flex>
       <v-flex xs12
+              class="text-xs-center">
+        <div class="logo">
+        </div>
+      </v-flex>
+      <v-flex xs12
               class="text--secondary text-xs-center">
         最近更新：{{lastUpdateFromNow}}
       </v-flex>
@@ -67,13 +72,13 @@ export default {
 
 <style lang="scss" scoped>
 .value-window {
-  height: 80vh;
+  height: 70vh;
 }
 .value-window-big {
   padding-left: 4vmin;
   padding-right: 4vmin;
   font-size: 20vmin;
-  line-height: 80vh;
+  line-height: 70vh;
   letter-spacing: -1vmin;
   word-spacing: -3vmin;
 
@@ -82,6 +87,44 @@ export default {
   }
   .unit-text {
     font-size: 8vmin;
+  }
+}
+.logo {
+  display: inline-block;
+  background-image: url('/static/cat.svg');
+  width: 64px;
+  height: 64px;
+  /*
+  &:hover {
+    animation-name: cat-shake;
+    animation-duration: 2s;
+    animation-direction: normal;
+    // box-shadow: 0 0 5px #000;
+  }
+  */
+}
+
+@keyframes cat-shake {
+  0% {
+    margin-left: 0px;
+  }
+  10% {
+    margin-left: 10px;
+  }
+  20% {
+    margin-left: -10px;
+  }
+  30% {
+    margin-left: 10px;
+  }
+  40% {
+    margin-left: -10px;
+  }
+  50% {
+    margin-left: 10px;
+  }
+  100% {
+    margin-left: 0px;
   }
 }
 </style>
