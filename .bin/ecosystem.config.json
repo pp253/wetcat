@@ -1,0 +1,21 @@
+{
+  "apps": [
+    {
+      "name": "wettycat",
+      "cwd": "./wettycat",
+      "script": "npm",
+      "args": "start",
+      "watch": false,
+      "ignore_watch": ["db/*", "node_modules/*", "view/*", "public/*"],
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    {
+      "name": "wp-dht11",
+      "cwd": "./wettycat-dht11",
+      "script": "./main.py",
+      "watch": false
+    }
+  ]
+}
