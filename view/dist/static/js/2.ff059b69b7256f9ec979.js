@@ -1,0 +1,2 @@
+webpackJsonp([2],{"0BSM":function(e,t){},ujtr:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});n("gyMJ");var r={render:function(){var e=this.$createElement,t=this._self._c||e;return t("v-container",[t("router-view")],1)},staticRenderFns:[]};var a=n("VU/8")({name:"Devices",data:function(){return{}},methods:{},mounted:function(){}},r,!1,function(e){n("0BSM")},"data-v-6a47e1ea",null);t.default=a.exports}});
+//# sourceMappingURL=2.ff059b69b7256f9ec979.js.map
