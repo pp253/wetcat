@@ -3,6 +3,8 @@ sudo apt-get update
 sudo apt-get install -y nmap
 sudo apt-get install -y dnsutils
 sudo apt-get install -y git
+sudo apt-get install -y ntp
+echo "Remember to sudo vim /etc/ntp.conf"
 
 sudo apt-get install -y dirmngr --install-recommends
 curl -sL https://deb.nodesource.com/setup | sudo -E bash -
