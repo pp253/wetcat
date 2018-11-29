@@ -4,4 +4,4 @@ export default {
   device
 }
 
-export const API_BASE_DOMAIN = 'https://wettycat.at.tw'
+export const API_BASE_DOMAIN = 'https://wettycat.at.tw:1365'
