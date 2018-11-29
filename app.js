@@ -90,10 +90,11 @@ if (IS_PRODUCTION) {
   }, app)
 
   // Listening
-  httpsServer.listen(443, () => {
-    console.log('Start listening on PORT %d ...', 443)
+  httpsServer.listen(1365, () => {
+    console.log('Start listening on PORT %d ...', 1365)
   })
 
+  /*
   // Auto redirect from port 80 to 443
   http.createServer((req, res) => {
     res.writeHead(301, {
@@ -101,6 +102,7 @@ if (IS_PRODUCTION) {
     })
     res.end()
   }).listen(80)
+  */
 } else {
   let httpServer = app.listen(process.env.PORT || 80, function () {
     console.log('Listening on port ' + httpServer.address().port)

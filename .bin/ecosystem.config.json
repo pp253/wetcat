@@ -1,5 +1,18 @@
 {
-  "apps": [
+  "nthu-course": [
+    {
+      "name": "nthu-course",
+      "cwd": "./nthu-select-courses-server",
+      "script": "npm",
+      "args": "start",
+      "watch": false,
+      "ignore_watch": ["db/*", "node_modules/*", "public/*"],
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ],
+  "wettycat": [
     {
       "name": "wettycat",
       "cwd": "./wettycat",
