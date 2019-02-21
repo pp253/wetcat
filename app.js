@@ -14,7 +14,9 @@ import { IS_PRODUCTION } from './lib/utils'
 import routes from './routes'
 import './models'
 
-console.log(`Running in ${IS_PRODUCTION ? 'production' : 'development'} environment.`)
+console.log(
+  `Running in ${IS_PRODUCTION ? 'production' : 'development'} environment.`
+)
 
 export const app = express()
 
@@ -56,7 +58,7 @@ app.use('/', routes)
 // development error handler
 // will print stacktrace
 if (!IS_PRODUCTION) {
-  app.use(function (err, req, res, next) {
+  app.use(function(err, req, res, next) {
     console.log(err.stack)
 
     res.status(err.status || 500)
@@ -72,7 +74,7 @@ if (!IS_PRODUCTION) {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
   res.status(err.status || 500)
   res.json({
     errors: {
@@ -82,6 +84,7 @@ app.use(function (err, req, res, next) {
   })
 })
 
+/*
 if (IS_PRODUCTION) {
   let httpsServer = https.createServer({
     key: fs.readFileSync(path.join(__dirname, './secret/private.key')),
@@ -94,7 +97,6 @@ if (IS_PRODUCTION) {
     console.log('Start listening on PORT %d ...', 1365)
   })
 
-  /*
   // Auto redirect from port 80 to 443
   http.createServer((req, res) => {
     res.writeHead(301, {
@@ -102,9 +104,13 @@ if (IS_PRODUCTION) {
     })
     res.end()
   }).listen(80)
-  */
 } else {
   let httpServer = app.listen(process.env.PORT || 80, function () {
     console.log('Listening on port ' + httpServer.address().port)
   })
 }
+*/
+
+let httpServer = app.listen(4000, function() {
+  console.log('Listening on port ' + httpServer.address().port)
+})
